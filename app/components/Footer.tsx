@@ -2,15 +2,11 @@ import Link from "next/link";
 
 export default function Footer() {
   const socials = [
-    { name: "Instagram", img: "instagram.png", url: "https://www.instagram.com/anotheronedown__" },
-    { name: "TikTok", img: "tiktok.png", url: "https://www.tiktok.com/@geek.craft.labs" },
-    { name: "Email", img: "email.png", url: "mailto:info@geekcraftlabs.com" },
-    { name: "Phone", img: "phone.png", url: "tel:+27684858415" },
+    { name: "Instagram", icon: "fa-instagram", url: "https://www.instagram.com/lavilash_and_nails?igsh=MXB0eDR1ZG5wNTBscg==" },
+    { name: "TikTok", icon: "fa-tiktok", url: "https://www.tiktok.com/@lavi.lash.nails?_r=1&_t=ZS-97vxtc3XnF7" },
+    { name: "WhatsApp", icon: "fa-whatsapp", url: "https://wa.me/27740289418" },
+    // Email is only shown as an icon in Follow Us; not written as text.
   ];
-
-  // Split into two rows for 2x2 layout
-  const topRow = socials.slice(0, 2);
-  const bottomRow = socials.slice(2, 4);
 
   return (
     <footer className="bg-[#fdf8f6] border-t border-[#d4a0a0]/20 py-12 mt-12">
@@ -35,16 +31,26 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-[#3d2c2c] mb-3">Contact</h4>
             <ul className="space-y-2 text-sm text-[#6b5555]">
-              <li><a href="tel:+27684858415" className="hover:text-[#d4a0a0] transition">+27 68 485 8415</a></li>
-              <li><a href="mailto:info@geekcraftlabs.com" className="hover:text-[#d4a0a0] transition">info@geekcraftlabs.com</a></li>
+              <li>
+                <a href="https://wa.me/27740289418" target="_blank" rel="noopener" className="hover:text-[#d4a0a0] transition">
+                  +27 74 028 9418
+                </a>
+              </li>
               <li>31 Cowley Rd, Sandton</li>
             </ul>
           </div>
           <div>
             <h4 className="font-semibold text-[#3d2c2c] mb-3">Follow Us</h4>
-            {/* Top row: Instagram, TikTok */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-3 max-w-30 mx-auto md:mx-0">
-              {topRow.map((social) => (
+            <div className="flex flex-wrap justify-center md:justify-start gap-3">
+              {/* Email icon – links to faithmakasi@gmail.com without displaying the address */}
+              <a
+                href="mailto:faithmakasi@gmail.com"
+                className="w-10 h-10 bg-[#d4a0a0]/10 rounded-full flex items-center justify-center hover:bg-[#d4a0a0] hover:scale-110 transition"
+                aria-label="Email"
+              >
+                <i className="fa-solid fa-envelope text-xl text-[#6b5555]"></i>
+              </a>
+              {socials.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
@@ -53,36 +59,7 @@ export default function Footer() {
                   className="w-10 h-10 bg-[#d4a0a0]/10 rounded-full flex items-center justify-center hover:bg-[#d4a0a0] hover:scale-110 transition"
                   aria-label={social.name}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={`/images/${social.img}`}
-                    alt={social.name}
-                    width={20}
-                    height={20}
-                    className="object-contain"
-                  />
-                </a>
-              ))}
-            </div>
-            {/* Bottom row: Email, Phone */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-3 max-w-30 mx-auto md:mx-0 mt-2">
-              {bottomRow.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener"
-                  className="w-10 h-10 bg-[#d4a0a0]/10 rounded-full flex items-center justify-center hover:bg-[#d4a0a0] hover:scale-110 transition"
-                  aria-label={social.name}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={`/images/${social.img}`}
-                    alt={social.name}
-                    width={20}
-                    height={20}
-                    className="object-contain"
-                  />
+                  <i className={`fa-brands ${social.icon} text-xl text-[#6b5555]`}></i>
                 </a>
               ))}
             </div>
