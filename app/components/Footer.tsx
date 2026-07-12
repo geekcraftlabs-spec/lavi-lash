@@ -5,7 +5,7 @@ export default function Footer() {
     { name: "Instagram", img: "instagram.png", url: "https://www.instagram.com/lavilash_and_nails?igsh=MXB0eDR1ZG5wNTBscg==" },
     { name: "TikTok", img: "tiktok.png", url: "https://www.tiktok.com/@lavi.lash.nails?_r=1&_t=ZS-97vxtc3XnF7" },
     { name: "Email", img: "email.png", url: "mailto:faithmakasi@gmail.com" },
-    { name: "Phone", img: "phone.png", url: "tel:+27740289418" },
+    { name: "Phone", img: "phone.png", url: "tel:+27740289418" }, // Faith's number for the icon
   ];
 
   // Split into two rows for 2x2 layout
@@ -32,18 +32,25 @@ export default function Footer() {
               <li><Link href="/appointment" className="hover:text-[#d4a0a0] transition">Book Now</Link></li>
             </ul>
           </div>
+
+          {/* Updated Contact Section – Two Numbers */}
           <div>
             <h4 className="font-semibold text-[#3d2c2c] mb-3">Contact</h4>
             <ul className="space-y-2 text-sm text-[#6b5555]">
               <li>
-                <a href="tel:+27740289418" className="hover:text-[#d4a0a0] transition">
-                  +27 74 028 9418
+                <a href="tel:+27711734337" className="hover:text-[#d4a0a0] transition">
+                  Precious: +27 71 173 4337
                 </a>
               </li>
-              {/* Email text removed – only icon remains */}
+              <li>
+                <a href="tel:+27740289418" className="hover:text-[#d4a0a0] transition">
+                  Faith: +27 74 028 9418
+                </a>
+              </li>
               <li>31 Cowley Rd, Sandton</li>
             </ul>
           </div>
+
           <div>
             <h4 className="font-semibold text-[#3d2c2c] mb-3">Follow Us</h4>
             {/* Top row: Instagram, TikTok */}
