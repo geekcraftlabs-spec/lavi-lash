@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
@@ -21,7 +21,8 @@ const pacifico = Pacifico({
 
 export const metadata: Metadata = {
   title: "Lavi Lash and Nails – Premium Beauty in Sandton",
-  description: "10+ years of lash extensions, nail artistry, waxing & massages in a peaceful Sandton oasis.",
+  description:
+    "10+ years of lash extensions, nail artistry, waxing & massages in a peaceful Sandton oasis.",
   icons: {
     icon: [
       {
@@ -29,6 +30,34 @@ export const metadata: Metadata = {
         type: "image/svg+xml",
       },
     ],
+  },
+
+  // ✅ Open Graph for social preview (WhatsApp, Facebook, etc.)
+  openGraph: {
+    title: "Lavi Lash and Nails – Premium Beauty in Sandton",
+    description:
+      "10+ years of lash extensions, nail artistry, waxing & massages in a peaceful Sandton oasis.",
+    url: "https://lavilashandnails.co.za",
+    siteName: "Lavi Lash and Nails",
+    locale: "en_ZA",
+    type: "website",
+    images: [
+      {
+        url: "https://lavilashandnails.co.za/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Lavi Lash and Nails – Premium Beauty in Sandton",
+      },
+    ],
+  },
+
+  // ✅ Twitter Card for larger preview
+  twitter: {
+    card: "summary_large_image",
+    title: "Lavi Lash and Nails – Premium Beauty in Sandton",
+    description:
+      "10+ years of lash extensions, nail artistry, waxing & massages in a peaceful Sandton oasis.",
+    images: ["https://lavilashandnails.co.za/images/og-image.png"],
   },
 };
 
